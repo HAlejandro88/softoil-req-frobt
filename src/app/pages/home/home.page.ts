@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Req01Service } from 'src/app/services/req01.service';
 
 @Component({
   selector: 'app-home',
@@ -6,31 +7,22 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  customPickerOptions;
-  customDate;
+  
+  req01 = {
+    departamentoSolicitante: '',
+    nombreSolicitante: '',
+    productoSolicitado: '',
+    cantidad: 1
+  }
 
-  constructor() {}
+  constructor(private req01Service: Req01Service) {}
 
-  ngOnInit() {
-    this.customPickerOptions = {
-      buttons:[{
-        text: 'Save',
-        handler: (evento)=> {
-          console.log('clicked save');
-          console.log(evento);
-          
-        }
-      
-    },    
-    {
-    text: 'log',
-    handler: ()=>{
-      console.log('clicked log');
-      return false;
-      
-    }
-  }]
-  };
-}
+  ngOnInit() {}
+
+  onSubmitTemplate() {
+    this.req01Service.createReq01(this.req01).subscribe((data:any) => {
+      console.log(data);
+    })
+  }
 
 }

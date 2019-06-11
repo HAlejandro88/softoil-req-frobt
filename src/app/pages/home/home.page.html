@@ -4,45 +4,71 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      Requisicion Equipo de Computo
+      Requisicion de Equipo de Computo
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <form #formulario="ngForm" (ngSubmit)="onSubmitTemplate()">
-    <ion-list>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12">
+          <form #formulario="ngForm" (ngSubmit)="onSubmitTemplate()">
+            <ion-list>
 
-      <ion-item>
-          <ion-label position="floating">Departamento que lo Solicita</ion-label>
-          <ion-input type="password"
-                     name="password"
-                     [(ngModel)]="usuario.password"
-                     required></ion-input>
-      </ion-item>
+              <ion-item>
+                <ion-label>Empresa</ion-label>
+                <ion-select [(ngModel)]="req01.empresa"
+                            okText="Okay" 
+                            name="empresa"
+                            cancelText="Dismiss">
+                  <ion-select-option value="Kepler">Kepler</ion-select-option>
+                  <ion-select-option value="ACE">ACE</ion-select-option>
+                  <ion-select-option value="HidroMex turbosina">HidroMex turbosina</ion-select-option>
+                  <ion-select-option value="ETC">ETC</ion-select-option>
+                </ion-select>
+              </ion-item>
 
+              <ion-item>
+                  <ion-label position="floating">Departamento que lo Solicita</ion-label>
+                  <ion-input type="text"
+                              name="departamentoSolicitante"
+                              [(ngModel)]="req01.departamentoSolicitante"
+                              required></ion-input>
+              </ion-item>
+        
+        
+              <ion-item>
+                  <ion-label position="floating">Quien lo Solicita</ion-label>
+                  <ion-input type="text"
+                              name="nombreSolicitante"
+                              [(ngModel)]="req01.nombreSolicitante"
+                              required></ion-input>
+              </ion-item>
+        
+              <ion-item>
+                  <ion-label position="floating">Producto que Solicita</ion-label>
+                  <ion-input type="text"
+                              name="productoSolicitado"
+                              [(ngModel)]="req01.productoSolicitado"
+                              required></ion-input>
+              </ion-item>
 
-      <ion-item>
-          <ion-label position="floating">Quien lo Solicita</ion-label>
-          <ion-input type="password"
-                     name="password"
-                     [(ngModel)]="usuario.password"
-                     required></ion-input>
-      </ion-item>
-
-      <ion-item>
-          <ion-label position="floating">Producto que Solicita</ion-label>
-          <ion-input type="password"
-                     name="password"
-                     [(ngModel)]="usuario.password"
-                     required></ion-input>
-      </ion-item>
-
-
-
-    </ion-list>
-
-    <ion-button expand="full" type="submit" [disabled]="formulario.invalid">Enviar</ion-button>
-
-  </form>
+              <ion-item>
+                  <ion-label position="floating">Producto que Solicita</ion-label>
+                  <ion-input type="number"
+                              name="cantidad"
+                              [(ngModel)]="req01.cantidad"
+                              required></ion-input>
+              </ion-item>
+              
+        
+            </ion-list>
+        
+            <ion-button expand="full" type="submit" [disabled]="formulario.invalid">Enviar</ion-button>
+        
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
