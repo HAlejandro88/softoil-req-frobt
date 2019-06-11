@@ -5,5 +5,97 @@
 </ion-header>
 
 <ion-content>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12">
+          <form #formulario="ngForm" (ngSubmit)="onSumitReparacion()">
+            <ion-list>
 
+              <ion-item>
+                <ion-label>Empresa</ion-label>
+                <ion-select [(ngModel)]="req02.empresa"
+                            okText="Okay" 
+                            name="empresa"
+                            cancelText="Dismiss">
+                  <ion-select-option value="Kepler">Kepler</ion-select-option>
+                  <ion-select-option value="ACE">ACE</ion-select-option>
+                  <ion-select-option value="HidroMex turbosina">HidroMex turbosina</ion-select-option>
+                  <ion-select-option value="ETC">ETC</ion-select-option>
+                </ion-select>
+              </ion-item>
+
+              <ion-item>
+                  <ion-label>Departame Solicitante</ion-label>
+                  <ion-select [(ngModel)]="req02.departamentoSolicita"
+                              okText="Okay" 
+                              name="departamentoSolicitante"
+                              cancelText="Dismiss">
+                    <ion-select-option value="gestionComercial">Gestion Comercial</ion-select-option>
+                    <ion-select-option value="prestacionServicio">Prestacion de Servicio</ion-select-option>
+                    <ion-select-option value="casoNegocio">Casos de Negocio</ion-select-option>
+                    <ion-select-option value="medicion">Medicion</ion-select-option>
+                    <ion-select-option value="medicion">Proyectos</ion-select-option>
+                    <ion-select-option value="medicion">Arp</ion-select-option>
+                  </ion-select>
+                </ion-item>
+        
+        
+              <ion-item>
+                  <ion-label position="floating">Quien lo Solicita</ion-label>
+                  <ion-input type="text"
+                              name="quienSolicita"
+                              [(ngModel)]="req02.quienSolicita"
+                              required></ion-input>
+              </ion-item>
+        
+              <ion-item>
+                <ion-label position="floating">Marca</ion-label>
+                <ion-input type="text"
+                            name="marca"
+                            [(ngModel)]="req02.marca"
+                            required></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="floating">Modelo</ion-label>
+                <ion-input type="text"
+                            name="modelo"
+                            [(ngModel)]="req02.modelo"
+                            required></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="floating">Serie</ion-label>
+                <ion-input type="text"
+                            name="serie"
+                            [(ngModel)]="req02.serie"
+                            required></ion-input>
+              </ion-item>
+          
+              <ion-item>
+                  <ion-label position="floating">Contraseña del equipo</ion-label>
+                  <ion-input type="text"
+                              name="contrasenaEquipo"
+                              [(ngModel)]="req02.contrasenaEquipo"
+                              required></ion-input>
+              </ion-item>
+              
+              
+              <ion-item>
+                  <ion-label position="stacked">Falla</ion-label>
+                  <ion-textarea placeholder="Describe la falla"
+                                name="falla"
+                                [(ngModel)]="req02.falla"
+                                required>
+                  </ion-textarea>
+                </ion-item>
+
+            </ion-list>
+        
+            <ion-button expand="full" type="submit" [disabled]="formulario.invalid">Enviar</ion-button>
+        
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
