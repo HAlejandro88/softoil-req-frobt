@@ -1,0 +1,48 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Requisicion Equipo de Computo
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #formulario="ngForm" (ngSubmit)="onSubmitTemplate()">
+    <ion-list>
+
+      <ion-item>
+          <ion-label position="floating">Departamento que lo Solicita</ion-label>
+          <ion-input type="password"
+                     name="password"
+                     [(ngModel)]="usuario.password"
+                     required></ion-input>
+      </ion-item>
+
+
+      <ion-item>
+          <ion-label position="floating">Quien lo Solicita</ion-label>
+          <ion-input type="password"
+                     name="password"
+                     [(ngModel)]="usuario.password"
+                     required></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label position="floating">Producto que Solicita</ion-label>
+          <ion-input type="password"
+                     name="password"
+                     [(ngModel)]="usuario.password"
+                     required></ion-input>
+      </ion-item>
+
+
+
+    </ion-list>
+
+    <ion-button expand="full" type="submit" [disabled]="formulario.invalid">Enviar</ion-button>
+
+  </form>
+</ion-content>

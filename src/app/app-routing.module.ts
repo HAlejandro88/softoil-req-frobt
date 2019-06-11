@@ -9,12 +9,17 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: './home/home.module#HomePageModule'
+    loadChildren: './pages/home/home.module#HomePageModule'
   },
   {
     path: 'list',
-    loadChildren: './list/list.module#ListPageModule'
-  }
+    loadChildren: './pages/list/list.module#ListPageModule'
+  },
+  { path: 'instalacion', loadChildren: './pages/instalacion/instalacion.module#InstalacionPageModule' },
+  { path: 'desarrollo-software', loadChildren: './pages/desarrollo-software/desarrollo-software.module#DesarrolloSoftwarePageModule' },
+  { path: 'desarrollo-marketing', loadChildren: './pages/desarrollo-marketing/desarrollo-marketing.module#DesarrolloMarketingPageModule' },
+  { path: 'desarrollo-animaciones', loadChildren: './pages/desarrollo-animaciones/desarrollo-animaciones.module#DesarrolloAnimacionesPageModule' },
+  { path: 'list', loadChildren: './pages/list/list.module#ListPageModule' }
 ];
 
 @NgModule({

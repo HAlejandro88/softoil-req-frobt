@@ -11,15 +11,36 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 export class AppComponent {
   public appPages = [
     {
-      title: 'Home',
+      title: 'ReqComputo',
       url: '/home',
-      icon: 'home'
+      icon: 'list-box'
     },
     {
-      title: 'List',
+      title: 'ReqReparacion',
       url: '/list',
-      icon: 'list'
+      icon: 'construct'
+    },
+    {
+      title: 'instalacion',
+      url:'/instalacion',
+      icon: 'build'
+    },
+    {
+      title: 'desarrollo-software',
+      url:'/desarrollo-software',
+      icon: 'code-working'
+    },
+    {
+      title: 'desarrollo-marketing',
+      url:'/desarrollo-marketing',
+      icon: 'easel'
+    },
+    {
+      title: 'desarrollo-animaciones',
+      url:'/desarrollo-animaciones',
+      icon: 'film'
     }
+
   ];
 
   constructor(
