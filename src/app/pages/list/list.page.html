@@ -26,7 +26,7 @@
 
               <ion-item>
                   <ion-label>Departame Solicitante</ion-label>
-                  <ion-select [(ngModel)]="req02.departamentoSolicita"
+                  <ion-select [(ngModel)]="req02.departamentoSolicitante"
                               okText="Okay" 
                               name="departamentoSolicitante"
                               cancelText="Dismiss">
@@ -43,8 +43,8 @@
               <ion-item>
                   <ion-label position="floating">Quien lo Solicita</ion-label>
                   <ion-input type="text"
-                              name="quienSolicita"
-                              [(ngModel)]="req02.quienSolicita"
+                              name="nombreSolicitante"
+                              [(ngModel)]="req02.nombreSolicitante"
                               required></ion-input>
               </ion-item>
         
@@ -84,8 +84,8 @@
               <ion-item>
                   <ion-label position="stacked">Falla</ion-label>
                   <ion-textarea placeholder="Describe la falla"
-                                name="falla"
-                                [(ngModel)]="req02.falla"
+                                name="descripcionFallo"
+                                [(ngModel)]="req02.descripcionFallo"
                                 required>
                   </ion-textarea>
                 </ion-item>
